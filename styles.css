@@ -1,0 +1,106 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(to bottom, #f8bbd9, #bbdefb); /* Pastel pink to pastel blue gradient */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+}
+
+.card-container {
+    perspective: 1000px;
+}
+
+.card {
+    width: 300px;
+    height: 400px;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.6s;
+    cursor: pointer;
+}
+
+.card-front, .card-inside {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+}
+
+.card-front {
+    background: #fce4ec; /* Light pastel pink */
+    color: #42a5f5; /* Pastel blue */
+}
+
+.card-inside {
+    background: #e1f5fe; /* Light pastel blue */
+    color: #e91e63; /* Pink text */
+    transform: rotateY(180deg);
+}
+
+.card.open {
+    transform: rotateY(180deg);
+}
+
+h1, h2 {
+    margin: 0;
+    font-size: 24px;
+}
+
+p {
+    font-size: 16px;
+    margin: 10px 0;
+}
+
+/* CSS-drawn pink roses */
+.rose {
+    width: 50px;
+    height: 50px;
+    background: #e91e63; /* Pink */
+    border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+    position: relative;
+    margin: 10px;
+}
+
+.rose::before {
+    content: '';
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background: #e91e63;
+    border-radius: 50%;
+    top: -10px;
+    left: 10px;
+}
+
+.rose::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 40px;
+    background: #4caf50; /* Green stem */
+    bottom: -20px;
+    left: 15px;
+    border-radius: 10px;
+}
+
+.rose2 {
+    transform: scale(0.8) rotate(20deg);
+}
+
+.inside-rose {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    transform: scale(0.6);
+}
